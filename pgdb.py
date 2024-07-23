@@ -114,7 +114,7 @@ description = schema.format_schema_description(schemadetails)
 prompt = [
     """
     You are an expert in converting English questions to SQL queries for a PostgreSQL database!
-The Postgres database has the following schema and data description: 
+The Postgres database is an HR databank, and has the following schema and data description: 
 {}, which includes table names, columns, and relationships between tables.
 The database includes an "Age Group" table structured as follows:
 Age Group Id | Age Category
