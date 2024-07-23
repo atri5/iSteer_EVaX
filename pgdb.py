@@ -133,11 +133,60 @@ PostgreSQL Query: SELECT *
                   WHERE LOWER(gender)=LOWER('Male');
 
 Example 3 - 
-English Question: employees who are born on 1985?
+English Question: employees who are born in 1985?
 PostgreSQL Query: SELECT *
                   FROM ebx_employee
                   WHERE TO_CHAR(date00, 'YYYY') = '1985';
+Example 4 - 
+English Question: List all employees with a salary greater than $50,000.
+PostgreSQL Query: SELECT *
+                  FROM ebx_employee
+                  WHERE salary > 50000;
 
+Example 5 - 
+English Question: Show the total number of employees.
+PostgreSQL Query: SELECT COUNT(*)
+                  FROM ebx_employee;
+
+Example 6 - 
+English Question: Retrieve the names and emails of all employees.
+PostgreSQL Query: SELECT name, email
+                  FROM ebx_employee;
+
+Example 7 - 
+English Question: Find all employees who joined in the last 30 days.
+PostgreSQL Query: SELECT *
+                  FROM ebx_employee
+                  WHERE join_date >= NOW() - INTERVAL '30 days';
+
+Example 8 - 
+English Question: Show all employees who work in the sales department.
+PostgreSQL Query: SELECT *
+                  FROM ebx_employee
+                  WHERE LOWER(department)=LOWER('sales');
+
+Example 9 - 
+English Question: List the names and job titles of all employees who were promoted after 2019.
+PostgreSQL Query: SELECT name, job_title
+                  FROM ebx_employee
+                  WHERE promotion_date > '2019-12-31';
+
+Example 10 - 
+English Question: Display the average salary of all employees.
+PostgreSQL Query: SELECT AVG(salary)
+                  FROM ebx_employee;
+
+Example 11 - 
+English Question: What are the names of the employees from the HR department?
+PostgreSQL Query: SELECT name
+                  FROM ebx_employee
+                  WHERE LOWER(department) = LOWER('HR');
+
+Example 12 - 
+English Question: Give me the details of all employees who have more than 10 years of experience.
+PostgreSQL Query: SELECT *
+                  FROM ebx_employee
+                  WHERE experience_years > 10;
 
 Note:
 - The SQL query should be formatted for PostgreSQL.
@@ -174,4 +223,4 @@ if submit:
     if not df.empty:
         st.dataframe(df)
     else:
-        st.write("No Such data in your database")
+        st.write("Data not found in the database!")
