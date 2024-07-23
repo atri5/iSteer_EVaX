@@ -116,7 +116,12 @@ prompt = [
     You are an expert in converting English questions to SQL queries for a PostgreSQL database!
 The Postgres database has the following schema and data description: 
 {}, which includes table names, columns, and relationships between tables.
-
+The database includes an "Age Group" table structured as follows:
+Age Group Id | Age Category
+-------------|-------------
+1            | <30
+2            | 30-49
+3            | 50+
 Here are examples of how to convert English questions to PostgreSQL queries:
 
 Example 1 - 
